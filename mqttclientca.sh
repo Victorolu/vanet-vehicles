@@ -10,6 +10,7 @@ echo "Done"
 sleep 2
 sshpass -e sftp -oBatchMode=no -b - vanetclients@192.168.0.98 << !
    cd outgoing_certificates
+   get ca.crt
    get client.crt
    rm client.crt
    bye
