@@ -1,6 +1,17 @@
 SUBINFO=/etc/certs/subjectinfo
 PASSFILE=/etc/certs/passwordfile
 
+
+#Creates the file containing the password for generating key and certificate
+if ! test -f "$PASSFILE"; then
+    echo "password" | sudo tee -a $PASSFILE > /dev/null
+fi
+
+#Creates the file containing the vehicle info for generating key and certificate
+if ! test -f "$SUBINFO"; then
+    echo "UK,Manchester,Manchester,vanet,vanet-vehicle,vehicle1" | sudo tee -a $SUBINFO > /dev/null
+fi
+
 while IFS="," read -r f1 f2 f3 f4 f5 f6
 do
     CO="$f1"
@@ -18,8 +29,6 @@ FILE=/etc/certs/client.key
 FILE2=/etc/certs/client.csr
 
 if test -f "$CERTDIR"; then
-    continue
-else
     sudo mkdir "$CERTDIR"
 fi
 
