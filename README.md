@@ -2,7 +2,7 @@
 
 This is the setup for the vehicles that will connect to the RSU brokers and publish messages to the topic "vanet/messages".
 
-In the **client_csr_key_gen.sh"" file, the password as well as subjectinfo details should be changed accordingly. The Common Name field in subjectinfo (CN) must match the name of client that would be connected to. In testing, this can be the IP address of the client.
+In the **client_csr_key_gen.sh** file, the password as well as subjectinfo details should be changed accordingly. The Common Name field in subjectinfo (CN) must match the name of client that would be connected to. In testing, this can be the IP address of the client.
 
 The pub_script.exp file should also have the password changed.
 
