@@ -15,7 +15,7 @@ fi
 
 #Creates the file containing the vehicle info for generating key and certificate
 if ! test -e "$SUBINFO"; then
-    echo "UK,Manchester,Manchester,vanet,vanet-vehicle,192.168.0.111" | sudo tee -a $SUBINFO > /dev/null
+    echo "UK,Manchester,Manchester,vanet,vanet-vehicle,vehicleID" | sudo tee -a $SUBINFO > /dev/null
 fi
 
 while IFS="," read -r f1 f2 f3 f4 f5 f6
@@ -30,7 +30,7 @@ do
     echo "$CO $ST $LO $OR $OU $CN"
 done < "$SUBINFO"
 
-if test -f "$FILE"; then
+if test -e "$FILE"; then
     echo "Private key file exists"
     echo "**********Replacing file**********"
     sudo rm "$FILE"
