@@ -10,4 +10,4 @@ It should be noted that the SSL connection required by MQTT is only supported by
 
 On downloading, the client_setup.sh file should be run as root using command:
 
-    sudo ./client_setup.sh
+    sudo bash ./client_setup.sh
