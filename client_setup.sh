@@ -7,6 +7,10 @@ else
     echo "Done"
 fi
 
+# Installing dependencies
+apt-get install -y python3-pandas
+sudo -H pip3 install paho-mqtt
+
 # Adds executable attribute to scripts
 chmod +x client_csr_key_gen.sh
 chmod +x mqttclientca.sh
