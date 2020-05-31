@@ -7,8 +7,8 @@ import pandas as pd
 broker = "192.168.0.112"
 port = 8883
 root_ca = "/etc/certs/ca.crt"
-client_crt = "/etc/certs/broker.crt"
-private_key = "/etc/certs/broker.key"
+client_crt = "/etc/certs/client.crt"
+private_key = "/etc/certs/client.key"
 
 topic="vanet/messages"
 
@@ -35,7 +35,7 @@ carMessage = {
             "VehicleSize": "Medium"
         }
 
-df = pd.DataFrame(carMessage.items(), columns=["Element", "Value"])
+df = pd.DataFrame(list(carMessage.items()), columns=["Element", "Value"])
 
 def on_publish(client, userdata, mid):
     print("sent") 
