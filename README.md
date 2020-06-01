@@ -4,6 +4,8 @@ This is the setup for the vehicles that will connect to the RSU brokers and publ
 
 In the **client_csr_key_gen.sh** file, the password as well as subjectinfo details should be changed accordingly. The Common Name field in subjectinfo (CN) must match the name of client that would be connected to. In testing, this can be the IP address of the client.
 
+In the **mqttclientca.sh** file, the CAserverIP field will need an input. Before connecting to the CA server, it is necessary to do a manual ssh connection to verify the ssh host using the ECDSA key fingerprint and add to the CA server to known-hosts
+
 The pub_script.exp file should also have the password changed.
 
 It should be noted that the SSL connection required by MQTT is only supported by Python 3.6.x and lower.
