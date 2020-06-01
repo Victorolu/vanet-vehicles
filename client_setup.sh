@@ -8,7 +8,7 @@ else
 fi
 
 # Installing dependencies
-apt-get install -y python3-pandas
+apt-get install -y python3-pandas python3-pip
 sudo -H pip3 install paho-mqtt
 
 # Adds executable attribute to scripts
