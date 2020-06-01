@@ -1,14 +1,17 @@
-export SSHPASS=vanetclients
+export SSHPASS=vanetclients # Password to connect to sftp client profile of certification authority
+CAserverIP=
 cd /etc/certs
 echo "Sending CSR to CA server"
-sshpass -e sftp -oBatchMode=no -b - vanetclients@192.168.0.98 << !
+# Connects to the sftp client for certification at username@ca_server_name to submit csr
+sshpass -e sftp -oBatchMode=no -b - vanetclients@$CAserverIP << !
    cd incoming_requests
    put client.csr
    bye
 !
 echo "Receiving CA and client certificates"
 sleep 1
-sshpass -e sftp -oBatchMode=no -b - vanetclients@192.168.0.98 << !
+# Connects to the sftp client for certification at username@ca_server_name to collect CA certificate and user certificate
+sshpass -e sftp -oBatchMode=no -b - vanetclients@$CAserverIP << !
    get ca.crt
    cd outgoing_certificates
    get client.crt
