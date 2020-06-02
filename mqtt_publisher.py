@@ -6,9 +6,9 @@ import pandas as pd
 vehicle_ip = ""
 broker = "Broker IP"
 port = 8883
-root_ca = "/etc/certs/ca.crt"
-vehicle_crt = "/etc/certs/"+ vehicle_ip + ".crt"
-private_key = "/etc/certs/"+ vehicle_ip + ".key"
+root_ca = "/etc/mqtt/ca.crt"
+vehicle_crt = "/etc/mqtt/"+ vehicle_ip + ".crt"
+private_key = "/etc/mqtt/"+ vehicle_ip + ".key"
 
 topic="vanet/messages"
 

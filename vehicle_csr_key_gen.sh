@@ -1,9 +1,9 @@
 VEHICLEIP=
-SUBINFO=/etc/certs/subjectinfo
-PASSFILE=/etc/certs/passwordfile
-CERTDIR=/etc/certs
-FILE=/etc/certs/$VEHICLEIP.key
-FILE2=/etc/certs/$VEHICLEIP.csr
+SUBINFO=/etc/mqtt/subjectinfo
+PASSFILE=/etc/mqtt/passwordfile
+CERTDIR=/etc/mqtt
+FILE=/etc/mqtt/$VEHICLEIP.key
+FILE2=/etc/mqtt/$VEHICLEIP.csr
 
 
 if ! test -e "$CERTDIR"; then
