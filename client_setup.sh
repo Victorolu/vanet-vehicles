@@ -8,7 +8,7 @@ else
 fi
 
 # Installing dependencies
-apt-get install -y python3-pandas python3-pip expect
+apt-get install -y python3-pandas python3-pip expect sshpass
 sudo -H pip3 install paho-mqtt
 
 # Adds executable attribute to scripts
