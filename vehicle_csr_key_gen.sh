@@ -1,9 +1,10 @@
+VEHICLEIP=
 SUBINFO=/etc/certs/subjectinfo
 PASSFILE=/etc/certs/passwordfile
 CERTDIR=/etc/certs
-FILE=/etc/certs/vehicle.key
-FILE2=/etc/certs/vehicle.csr
-VEHICLEIP=
+FILE=/etc/certs/$VEHICLEIP.key
+FILE2=/etc/certs/$VEHICLEIP.csr
+
 
 if ! test -e "$CERTDIR"; then
     mkdir "$CERTDIR"
