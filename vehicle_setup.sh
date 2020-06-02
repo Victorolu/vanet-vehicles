@@ -9,9 +9,6 @@ else
     echo "Created /etc/blockchain directory"
 fi
 
-# Creates file containing VEHICLE IP address
-echo "$VEHICLEIP" > /etc/mqtt/ip_address
-
 # Installing dependencies
 apt-get install -y python3-pandas python3-pip expect sshpass
 sudo -H pip3 install paho-mqtt

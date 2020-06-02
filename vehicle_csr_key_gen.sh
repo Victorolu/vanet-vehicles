@@ -10,6 +10,9 @@ if ! test -e "$CERTDIR"; then
     mkdir "$CERTDIR"
 fi
 
+# Creates file containing VEHICLE IP address
+echo "$VEHICLEIP" > /etc/mqtt/ip_address
+
 #Creates the file containing the password for generating key and certificate
 if ! test -e "$PASSFILE"; then
     echo "password" | sudo tee -a $PASSFILE > /dev/null
