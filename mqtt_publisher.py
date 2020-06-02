@@ -7,8 +7,8 @@ import pandas as pd
 broker = "192.168.0.112"
 port = 8883
 root_ca = "/etc/certs/ca.crt"
-client_crt = "/etc/certs/client.crt"
-private_key = "/etc/certs/client.key"
+vehicle_crt = "/etc/certs/vehicle.crt"
+private_key = "/etc/certs/vehicle.key"
 
 topic="vanet/messages"
 
@@ -44,7 +44,7 @@ client= paho.Client()
 
 client.on_publish=on_publish
 client.tls_set(ca_certs=root_ca,
-            certfile=client_crt,
+            certfile=vehicle_crt,
             keyfile=private_key,
             cert_reqs=ssl.CERT_REQUIRED,
             tls_version=ssl.PROTOCOL_TLSv1_2,

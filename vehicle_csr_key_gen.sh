@@ -1,8 +1,8 @@
 SUBINFO=/etc/certs/subjectinfo
 PASSFILE=/etc/certs/passwordfile
 CERTDIR=/etc/certs
-FILE=/etc/certs/client.key
-FILE2=/etc/certs/client.csr
+FILE=/etc/certs/vehicle.key
+FILE2=/etc/certs/vehicle.csr
 
 if ! test -e "$CERTDIR"; then
     mkdir "$CERTDIR"
