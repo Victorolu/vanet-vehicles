@@ -1,6 +1,6 @@
 export SSHPASS=vanetclients # Password to connect to sftp client profile of certification authority
-CAserverIP=
-VEHICLEIP=
+VEHICLEIP=$1
+CAserverIP=$2
 cd /etc/mqtt
 echo "Sending CSR to CA server"
 # Connects to the sftp client for certification at username@ca_server_name to submit csr

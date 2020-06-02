@@ -1,4 +1,4 @@
-VEHICLEIP=
+VEHICLEIP=$1
 SUBINFO=/etc/mqtt/subjectinfo
 PASSFILE=/etc/mqtt/passwordfile
 CERTDIR=/etc/mqtt

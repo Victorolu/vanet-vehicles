@@ -1,4 +1,6 @@
 BLOCKCHAINDIR=/etc/blockchain
+VEHICLEIP=$1
+CASERVERIP=$2
 
 if test -e "$BLOCKCHAINDIR"; then
     echo "/etc/blockchain directory already exists"
@@ -6,6 +8,9 @@ else
     mkdir "$BLOCKCHAINDIR"
     echo "Created /etc/blockchain directory"
 fi
+
+# Creates file containing VEHICLE IP address
+echo "$VEHICLEIP" > /etc/mqtt/ip_address
 
 # Installing dependencies
 apt-get install -y python3-pandas python3-pip expect sshpass
@@ -16,10 +21,10 @@ chmod +x vehicle_csr_key_gen.sh
 chmod +x mqttvehicleca.sh
 
 # Creates the cleint's key and csr for mqtt connection
-./vehicle_csr_key_gen.sh
+./vehicle_csr_key_gen.sh $VEHICLEIP
 
 # Sends the created crs to the CA for certification
-./mqttvehicleca.sh
+./mqttvehicleca.sh $VEHICLEIP $CASERVERIP
 
 # Creates copies of mqtt subscriber and blockchain executable files
 cp pub_script.exp /etc/blockchain/pub_script.exp

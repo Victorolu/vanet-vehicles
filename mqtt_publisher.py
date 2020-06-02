@@ -3,7 +3,9 @@ import paho.mqtt.client as paho
 import hashlib, argparse, ssl, pickle
 import pandas as pd
 
-vehicle_ip = ""
+# Connection parameters
+with open ("/etc/mqtt/ip_address", "r") as ip_address:
+    vehicle_ip = ip_address.readline().rstrip('\n')
 broker = "Broker IP"
 port = 8883
 root_ca = "/etc/mqtt/ca.crt"
