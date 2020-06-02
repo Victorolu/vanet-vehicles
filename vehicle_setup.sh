@@ -9,7 +9,7 @@ else
     echo "Created /etc/blockchain directory"
 fi
 
-# Adds CA Server to known hosts
+# Adds CA Server to known hosts and makes sure there are no duplicates
 ssh-keygen -R $CASERVERIP
 ssh-keyscan -H $CASERVERIP >> ~/.ssh/known_hosts
 
