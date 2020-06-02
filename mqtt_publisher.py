@@ -3,12 +3,12 @@ import paho.mqtt.client as paho
 import hashlib, argparse, ssl, pickle
 import pandas as pd
 
-
-broker = "192.168.0.112"
+vehicle_ip = ""
+broker = "Broker IP"
 port = 8883
 root_ca = "/etc/certs/ca.crt"
-vehicle_crt = "/etc/certs/vehicle.crt"
-private_key = "/etc/certs/vehicle.key"
+vehicle_crt = "/etc/certs/"+ vehicle_ip + ".crt"
+private_key = "/etc/certs/"+ vehicle_ip + ".key"
 
 topic="vanet/messages"
 

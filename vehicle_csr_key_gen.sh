@@ -3,6 +3,7 @@ PASSFILE=/etc/certs/passwordfile
 CERTDIR=/etc/certs
 FILE=/etc/certs/vehicle.key
 FILE2=/etc/certs/vehicle.csr
+VEHICLEIP=
 
 if ! test -e "$CERTDIR"; then
     mkdir "$CERTDIR"
@@ -15,7 +16,7 @@ fi
 
 #Creates the file containing the vehicle info for generating key and certificate
 if ! test -e "$SUBINFO"; then
-    echo "UK,Manchester,Manchester,vanet,vanet-vehicle,vehicleID" | sudo tee -a $SUBINFO > /dev/null
+    echo "UK,Manchester,Greater Manchester,vanet,vanet-vehicle,$VEHICLEIP" | sudo tee -a $SUBINFO > /dev/null
 fi
 
 while IFS="," read -r f1 f2 f3 f4 f5 f6

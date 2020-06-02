@@ -1,10 +1,10 @@
 BLOCKCHAINDIR=/etc/blockchain
 
 if test -e "$BLOCKCHAINDIR"; then
-    echo "Directory already exists"
+    echo "/etc/blockchain directory already exists"
 else
     mkdir "$BLOCKCHAINDIR"
-    echo "Done"
+    echo "Created /etc/blockchain directory"
 fi
 
 # Installing dependencies
