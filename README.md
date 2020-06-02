@@ -4,9 +4,6 @@ This is the setup for the vehicles that will connect to the RSU brokers and publ
 
 In the **vehicle_csr_key_gen.sh** file, the password as well as subjectinfo details should be changed accordingly. The **sub_script.exp** file should also have the password changed to match.
 
-Before connecting to the CA server, it is necessary to do a manual ssh connection **as root** to verify the ssh host using the ECDSA key fingerprint and add the CA server to known-hosts using the command below:
-    $ sudo sftp vanetclients@[IP address of CA Server]
-
 In the **mqtt_publisher.py** file, the broker field needs to be inputted which is the Common Name for the broker (IP address of the broker host machine).
 
 It should be noted that the SSL connection required by MQTT is only supported by Python 3.6.x and lower.

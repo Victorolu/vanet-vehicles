@@ -9,6 +9,10 @@ else
     echo "Created /etc/blockchain directory"
 fi
 
+# Adds CA Server to known hosts
+ssh-keygen -R $CASERVERIP
+ssh-keyscan -H $CASERVERIP >> ~/.ssh/known_hosts
+
 # Installing dependencies
 apt-get install -y python3-pandas python3-pip expect sshpass
 sudo -H pip3 install paho-mqtt
