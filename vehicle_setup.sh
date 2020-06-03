@@ -23,14 +23,14 @@ chmod +x mqttvehicleca.sh
 chmod +x mqtt_publisher.py
 chmod +x pub_script.exp
 
-# Creates copies of mqtt subscriber and blockchain executable files
-cp pub_script.exp /etc/blockchain/pub_script.exp
-cp mqtt_publisher.py /etc/blockchain/mqtt_publisher.py
-cp vehicle_csr_key_gen.sh /etc/mqtt/vehicle_csr_key_gen.sh
-cp mqttvehicleca.sh /etc/mqtt/mqttvehicleca.sh
-
 # Creates the cleint's key and csr for mqtt connection
 ./vehicle_csr_key_gen.sh $VEHICLEIP
 
 # Sends the created crs to the CA for certification
 ./mqttvehicleca.sh $VEHICLEIP $CASERVERIP
+
+# Creates copies of mqtt subscriber and blockchain executable files
+cp pub_script.exp /etc/blockchain/pub_script.exp
+cp mqtt_publisher.py /etc/blockchain/mqtt_publisher.py
+cp vehicle_csr_key_gen.sh /etc/mqtt/vehicle_csr_key_gen.sh
+cp mqttvehicleca.sh /etc/mqtt/mqttvehicleca.sh
