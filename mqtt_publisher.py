@@ -14,11 +14,6 @@ private_key = "/etc/mqtt/"+ vehicle_ip + ".key"
 
 topic="vanet/messages"
 
-# This allows for messages to parsed to the mqtt publisher client as that is what would be expected
-# parser = argparse.ArgumentParser()
-# parser.add_argument('-m', '--message', required=True, default=None)
-# df = parser.parse_args().message
-
 # This is test data of messages that can be sent by vehicles in a VANET
 carMessage = {
             "DSRCmsgID": "35",
@@ -36,6 +31,11 @@ carMessage = {
             "BrakeSystemStatus": "Good",
             "VehicleSize": "Medium"
         }
+
+# This allows for messages to parsed to the mqtt publisher client as that is what would be expected
+# parser = argparse.ArgumentParser()
+# parser.add_argument('-m', '--message', required=True, default=None)
+# df = parser.parse_args().message
 
 df = pd.DataFrame(list(carMessage.items()), columns=["Element", "Value"])
 
